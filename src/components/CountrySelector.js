@@ -7,17 +7,12 @@ const CountrySelector = ({countries, onCountrySelected, onFavCountrySelected}) =
         onCountrySelected(event.target.value);
     }
 
-    const handleFavChange = (event) => {
-        event.preventDefault();
-        onFavCountrySelected();
-        // console.log(selectedCountryCCA3Code);
-       
-    }
+
 
 
   return (
     <>
-    <form onSubmit={handleFavChange}>
+  
     <select onChange={handleChange}>
         {countries.map(country => {
             return (
@@ -28,12 +23,7 @@ const CountrySelector = ({countries, onCountrySelected, onFavCountrySelected}) =
         })
     }
    </select>
-            <input
-                type="submit"
-                value="Post"
-            />
-
-   </form>
+            
 </>
 
   )

@@ -37,10 +37,8 @@ const handleCountrySelected = cca3 => {
     console.log(selectedCountryCCA3Code);
 }
 
-const handleFavCountrySelected = () => {
-    setSelectedFavCountryCCA3(selectedCountryCCA3Code);
-    console.log(selectedFavCountryCCA3);
-}
+
+
 
 const selectedFavCountry = countries.find(
     country => country.cca3 === selectedFavCountryCCA3
@@ -54,7 +52,8 @@ const selectedCountry = countries.find(
 <>
 <h2>Population of the world is {worldPopulation}</h2>
 <h3>Choose your country:</h3>
-<CountrySelector countries={countries} onCountrySelected={handleCountrySelected}  onFavCountrySelected={handleFavCountrySelected}/>
+<CountrySelector countries={countries} onCountrySelected={handleCountrySelected} />
+
 <Country country={selectedCountry}/>
 <FavCountryList countries={favCountryList} />
 </>
