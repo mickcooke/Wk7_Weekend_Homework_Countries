@@ -8,9 +8,9 @@ const CountrySelector = ({countries, onCountrySelected, onFavCountrySelected}) =
         onCountrySelected(event.target.value);
     }
 
-    const handleFavChange = () => {
+    const handleFavChange = event => {
         // onFavCountrySelected(selectedCountryId);
-        console.log('Button is pressed');
+        console.log(event);
        
     }
 
