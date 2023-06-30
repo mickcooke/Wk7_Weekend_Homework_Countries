@@ -34,10 +34,12 @@ useEffect(() => {
 
 const handleCountrySelected = cca3 => {
     setSelectedCountryCCA3Code(cca3);
+    console.log(selectedCountryCCA3Code);
 }
 
-const handleFavCountrySelected = cca3 => {
-    setSelectedFavCountryCCA3(cca3);
+const handleFavCountrySelected = () => {
+    setSelectedFavCountryCCA3(selectedCountryCCA3Code);
+    console.log(selectedFavCountryCCA3);
 }
 
 const selectedFavCountry = countries.find(
@@ -52,9 +54,9 @@ const selectedCountry = countries.find(
 <>
 <h2>Population of the world is {worldPopulation}</h2>
 <h3>Choose your country:</h3>
-<CountrySelector countries={countries} onCountrySelected={handleCountrySelected}/>
+<CountrySelector countries={countries} onCountrySelected={handleCountrySelected}  onFavCountrySelected={handleFavCountrySelected}/>
 <Country country={selectedCountry}/>
-<FavCountryList countries={favCountryList} onFavCountrySelected={handleFavCountrySelected}/>
+<FavCountryList countries={favCountryList} />
 </>
 
   )
