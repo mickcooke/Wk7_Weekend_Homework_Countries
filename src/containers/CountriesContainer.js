@@ -54,7 +54,7 @@ const selectedCountry = countries.find(
 <h3>Choose your country:</h3>
 <CountrySelector countries={countries} onCountrySelected={handleCountrySelected}/>
 <Country country={selectedCountry}/>
-<FavCountryList/>
+<FavCountryList countries={favCountryList} onFavCountrySelected={handleFavCountrySelected}/>
 </>
 
   )

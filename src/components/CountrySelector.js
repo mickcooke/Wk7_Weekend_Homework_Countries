@@ -1,17 +1,19 @@
 import React from "react";
 import Country from "./Country";
 
-const CountrySelector = ({countries, onCountrySelected}) => {
+const CountrySelector = ({countries, onCountrySelected, onFavCountrySelected}) => {
 
     const handleChange = event => {
-        const selectedCountryId = event.target.value
+        const selectedCountryId = event.target.value;
         onCountrySelected(event.target.value);
     }
 
-    // const handleFavChange = event => {
-    //     const id = 
-    //     onFavCountrySelected(id)
-    // }
+    const handleFavChange = () => {
+        // onFavCountrySelected(selectedCountryId);
+        console.log('Button is pressed');
+       
+    }
+
 
   return (
     <>
@@ -24,9 +26,10 @@ const CountrySelector = ({countries, onCountrySelected}) => {
         })
     }
    </select>
-   </>
+  
 
-//<button onChange={handleFavChange}>Favourite</button>
+<button onClick={handleFavChange}>Favourite</button>
+</>
 
   )
 }
