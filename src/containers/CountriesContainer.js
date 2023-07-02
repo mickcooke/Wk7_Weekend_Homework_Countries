@@ -40,10 +40,13 @@ const handleCountrySelected = cca3 => {
 }
 
 const handleFavouriteCountrySelected = countryName => {
+    if (favCountryList.includes(countryName)){
+        return null
+    }else{
     const updatedFavCountryList = [...favCountryList, countryName];
     setFavCountryList(updatedFavCountryList);
     console.log(favCountryList);
-
+};
 }
 
 const clearFavList = () => {

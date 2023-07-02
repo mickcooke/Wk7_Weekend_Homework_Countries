@@ -19,7 +19,7 @@ const FavCountryList = ({favCountries, clearFavList}) => {
 
 return (
     <>
-   {favCountryNodes}
+   {favCountryNodes} 
   <button onClick={handleClick}>Clear List</button>
    </>
   )
