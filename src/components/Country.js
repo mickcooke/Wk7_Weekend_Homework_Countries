@@ -18,7 +18,8 @@ const Country = ({country, onFavCountrySelected}) => {
     return (
 
         <>
-        <span><h3>Name: {country.name.common}</h3></span>
+        <span><p>Name: {country.name.common}</p></span>
+        <p>Population: {country.population}</p>
         <p>{country.flag}</p>
         <button onClick={handleClick}>Favourite</button>
         </>

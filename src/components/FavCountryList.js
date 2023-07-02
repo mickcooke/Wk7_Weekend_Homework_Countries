@@ -17,12 +17,17 @@ const FavCountryList = ({favCountries, clearFavList}) => {
 
 }
 
+
 return (
     <>
-   {favCountryNodes} 
-  <button onClick={handleClick}>Clear List</button>
+    <h4>Favourite Countries</h4>
+   {favCountryNodes}
+<button onClick={handleClick}>Clear List</button>
+  
+  
    </>
   )
 }
+
 
 export default FavCountryList;

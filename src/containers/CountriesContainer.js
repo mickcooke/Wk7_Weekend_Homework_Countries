@@ -61,10 +61,12 @@ const selectedCountry = countries.find(
   return (
 <>
 <h2>Population of the world is {worldPopulation}</h2>
+<hr></hr>
 <h3>Choose your country:</h3>
 <CountrySelector countries={countries} onCountrySelected={handleCountrySelected} />
 
 <Country country={selectedCountry} onFavCountrySelected={handleFavouriteCountrySelected} />
+<hr></hr>
 <FavCountryList favCountries={favCountryList} clearFavList={clearFavList}/>
 </>
 

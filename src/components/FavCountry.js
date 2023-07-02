@@ -9,7 +9,7 @@ const FavCountry = ({country}) => {
     return (
 
         <>
-        <h4>{country}</h4>
+        <p>{country}</p>
         </>
     )
   
