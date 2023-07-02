@@ -8,8 +8,7 @@ const CountriesContainer = () => {
     const [countries, setCountries] = useState([]);
     const [selectedCountryCCA3Code, setSelectedCountryCCA3Code] = useState('');
     const [worldPopulation, setWorldPopulation] = useState(0);
-    const [selectedFavCountryCCA3, setSelectedFavCountryCCA3] = useState('');
-    const [favCountryList, setFavCountryList] = useState([]);
+    const [favCountryList, setFavCountryList] = useState(['']);
 
 const getCountries = () => {
   fetch("https://restcountries.com/v3.1/all")
@@ -32,17 +31,24 @@ useEffect(() => {
   getCountries();
 },[])
 
+useEffect(() => {
+  setFavCountryList([]);
+},[])
+
 const handleCountrySelected = cca3 => {
     setSelectedCountryCCA3Code(cca3);
     console.log(selectedCountryCCA3Code);
 }
 
+const handleFavouriteCountrySelected = countryName => {
+    const updatedFavCountryList = [...favCountryList, countryName];
+    setFavCountryList(updatedFavCountryList);
+    console.log(favCountryList);
+
+}
 
 
 
-const selectedFavCountry = countries.find(
-    country => country.cca3 === selectedFavCountryCCA3
-)
 
 const selectedCountry = countries.find(
     country => country.cca3 === selectedCountryCCA3Code
@@ -54,8 +60,8 @@ const selectedCountry = countries.find(
 <h3>Choose your country:</h3>
 <CountrySelector countries={countries} onCountrySelected={handleCountrySelected} />
 
-<Country country={selectedCountry}/>
-<FavCountryList countries={favCountryList} />
+<Country country={selectedCountry} onFavCountrySelected={handleFavouriteCountrySelected} />
+<FavCountryList favCountries={favCountryList} />
 </>
 
   )

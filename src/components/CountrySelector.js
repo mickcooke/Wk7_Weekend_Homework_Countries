@@ -1,7 +1,7 @@
 import React from "react";
 import Country from "./Country";
 
-const CountrySelector = ({countries, onCountrySelected, onFavCountrySelected}) => {
+const CountrySelector = ({countries, onCountrySelected}) => {
 
     const handleChange = event => {
         onCountrySelected(event.target.value);

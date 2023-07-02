@@ -1,17 +1,15 @@
 import React from "react";
 
-const FavCountry = () => {
+const FavCountry = ({country}) => {
 
-    // if (!country){
-    //     return null
-    // }
+    if (!country){
+        return null
+    }
 
     return (
 
         <>
-        <h4>This is my favourite country</h4>
-        {/* <span><h3>Name: {country.name.common}</h3></span>
-        <span>{country.flag}</span> */}
+        <h4>{country}</h4>
         </>
     )
   

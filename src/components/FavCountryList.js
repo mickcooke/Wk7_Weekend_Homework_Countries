@@ -2,14 +2,18 @@ import React from "react";
 import FavCountry from "./FavCountry";
 
 
-const FavCountryList = ({}) => {
+const FavCountryList = ({favCountries}) => {
 
-    
+  const favCountryNodes = favCountries.map(country => {
+    return(
+      <FavCountry country={country}></FavCountry>
+    );
+  });
 
-  return (
+return (
     <>
-   <h2>Favourite Countries</h2>
-   <FavCountry/>
+   {favCountryNodes}
+  
    </>
   )
 }

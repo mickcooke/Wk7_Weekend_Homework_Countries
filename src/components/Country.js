@@ -1,10 +1,10 @@
 import React from "react";
 
-const Country = ({country}) => {
+const Country = ({country, onFavCountrySelected}) => {
 
-    const handleFavCountrySelected = () => {
+    const handleClick = () => {
        
-        console.log(country.name.common);
+        onFavCountrySelected(country.name.common);
 
     }
    
@@ -20,7 +20,7 @@ const Country = ({country}) => {
         <>
         <span><h3>Name: {country.name.common}</h3></span>
         <p>{country.flag}</p>
-        <button onClick={handleFavCountrySelected}>Favourite</button>
+        <button onClick={handleClick}>Favourite</button>
         </>
     )
   
