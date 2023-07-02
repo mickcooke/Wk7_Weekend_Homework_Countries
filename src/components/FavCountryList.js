@@ -2,7 +2,8 @@ import React from "react";
 import FavCountry from "./FavCountry";
 
 
-const FavCountryList = ({favCountries}) => {
+const FavCountryList = ({favCountries, clearFavList}) => {
+
 
   const favCountryNodes = favCountries.map(country => {
     return(
@@ -10,10 +11,16 @@ const FavCountryList = ({favCountries}) => {
     );
   });
 
+  const handleClick = () => {
+       
+    clearFavList();
+
+}
+
 return (
     <>
    {favCountryNodes}
-  
+  <button onClick={handleClick}>Clear List</button>
    </>
   )
 }

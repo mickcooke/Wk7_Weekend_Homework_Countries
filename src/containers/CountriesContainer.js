@@ -23,17 +23,16 @@ const getWorldPopulation = () => {
   setWorldPopulation(population);
 }
 
-useEffect(() => {
-    getWorldPopulation();
-},[])
+
 
 useEffect(() => {
   getCountries();
 },[])
 
 useEffect(() => {
-  setFavCountryList([]);
-},[])
+    getWorldPopulation();
+},[countries])
+
 
 const handleCountrySelected = cca3 => {
     setSelectedCountryCCA3Code(cca3);
@@ -47,7 +46,9 @@ const handleFavouriteCountrySelected = countryName => {
 
 }
 
-
+const clearFavList = () => {
+    setFavCountryList(['']);
+}
 
 
 const selectedCountry = countries.find(
@@ -61,7 +62,7 @@ const selectedCountry = countries.find(
 <CountrySelector countries={countries} onCountrySelected={handleCountrySelected} />
 
 <Country country={selectedCountry} onFavCountrySelected={handleFavouriteCountrySelected} />
-<FavCountryList favCountries={favCountryList} />
+<FavCountryList favCountries={favCountryList} clearFavList={clearFavList}/>
 </>
 
   )
